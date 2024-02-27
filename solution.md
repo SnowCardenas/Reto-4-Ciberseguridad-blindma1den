@@ -48,7 +48,7 @@ Probamos la conectividad con las credenciales obtenidas
 ```cs
 ssh admin@127.0.0.1 -p 2222 
 ```
-
+![Conexión exitosa](image-2.png)
 
 
 
