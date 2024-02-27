@@ -1,6 +1,6 @@
 # Solucion para el reto 4
 
-## Comando utilizado para la obtencion de la contraseña del usuario admim
+## Comando utilizado para la obtención de la contraseña para el usuario admim
 
 ```cs
 hydra -s 2222 -l admin -P /usr/share/wordlists/rockyou.txt -e nsr -t 8 ssh://127.0.0.1 -v -f
@@ -9,13 +9,13 @@ hydra -s 2222 -l admin -P /usr/share/wordlists/rockyou.txt -e nsr -t 8 ssh://127
 
 
 - Hydra: Llamamos la herramienta de Hydra.
-- -s: Definimos el numero de puerto usado para el ejercicio, ejemplo ==2222==.
-- -l: Definimos el nombre del usuario para la conexion, ejemplo ==admin==.
-- -P: Definimos el diccionario de contraseñas a usar para el ataque, ==/usr/share/wordlists/rockyou.txt==.
-- -e nsr: Definimos como entrada la opcion de una contraseña vacia(n), el nombre de usuario como contraseña(s), el nombre de usuario con las letras invertidas( r ).
-- -t: Definimos el numero de tareas en paralelo, ejemplo 8.
-- ssh: Definimos el protocolo victima, ejemplo SSH.
-- IP: Definimos la IP de la victima, ejemplo ==//127.0.0.1==.
+- -s: Definimos el número de puerto usado para el ejercicio, ejemplo **2222**.
+- -l: Definimos el nombre del usuario para la conexión, ejemplo **admin**.
+- -P: Definimos el diccionario de contraseñas a usar para el ataque, **/usr/share/wordlists/rockyou.txt**.
+- -e nsr: Definimos como entrada la opcion de una contraseña vacia(**n**), el nombre de usuario como contraseña(**s**), el nombre de usuario con las letras invertidas(**r**).
+- -t: Definimos el número de tareas en paralelo, ejemplo **8**.
+- ssh: Definimos el protocolo victima, ejemplo **SSH**.
+- IP: Definimos la IP de la victima, ejemplo **//127.0.0.1**.
 - -v: Activamos el modo Verbose, para ver información detallada del ataque.
 - -f: Termina el ataque cuando encuentre una contraseña valida.
 
@@ -41,14 +41,14 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-02-26 21:07:
 ```
 ![Contraseña para admin](image-1.png)
 
-## Conexion con el servicio SSH
+## Conexión con el servicio SSH
 
 Probamos la conectividad con las credenciales obtenidas
 
 ```cs
 ssh admin@127.0.0.1 -p 2222 
 ```
-![Conexion exitosa](image-2.png)
+![conexión exitosa](image-2.png)
 
 
 
