@@ -51,3 +51,5 @@ Una vez desplegado el contenedor, el servicio SSH estará disponible en el puert
 ¡Es hora de hackear!
 
 ---
+
+La solucion esta descrita en el pdf "Reto 4 ciberseguridad.pdf"
